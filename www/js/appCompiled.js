@@ -1,4 +1,4 @@
-/*! AppTemplate - v0.0.0 - 2014-01-19
+/*! AppTemplate - v0.0.0 - 2014-01-22
 * http://www.calendee.com
 * Copyright (c) 2014 Calendee LLC; Licensed  */
 'use strict';
