@@ -47,6 +47,8 @@ var app = angular.module('App', ['hmTouchEvents'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/', { templateUrl: 'htmlPartials/Home.html', controller: 'HomeController' })
+            .when('/Page01', { templateUrl: 'htmlPartials/Page01.html', controller: 'HomeController' })
+            .when('/Page02', { templateUrl: 'htmlPartials/Page02.html', controller: 'HomeController' })
             // NOTE : this redirect solves the problem with ios not recognizing index.html as /
             .otherwise({redirectTo: '/'});
 }]);

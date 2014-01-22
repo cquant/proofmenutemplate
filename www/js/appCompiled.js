@@ -50,6 +50,8 @@ var app = angular.module('App', ['hmTouchEvents'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/', { templateUrl: 'htmlPartials/Home.html', controller: 'HomeController' })
+            .when('/Page01', { templateUrl: 'htmlPartials/Page01.html', controller: 'HomeController' })
+            .when('/Page02', { templateUrl: 'htmlPartials/Page02.html', controller: 'HomeController' })
             // NOTE : this redirect solves the problem with ios not recognizing index.html as /
             .otherwise({redirectTo: '/'});
 }]);
@@ -77,11 +79,16 @@ app.directive('mainAppNavigation', function() {
 app.controller('HomeController', ['$scope', function($scope) {
 
 }]);
-app.controller('MenuAndNavController', ['$scope', function($scope) {
+app.controller('MenuAndNavController', ['$scope', '$location', function($scope, $location) {
 
     $scope.menuShown = false;
 
     $scope.toggleMenu = function() {
         $scope.menuShown = !$scope.menuShown;
+    }
+
+    $scope.menuGo = function( path ) {
+        $scope.menuShown = false;
+        $location.path( path );
     }
 }]);
